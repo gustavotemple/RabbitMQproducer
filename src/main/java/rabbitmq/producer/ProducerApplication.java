@@ -4,8 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import rabbitmq.producer.exchanges.ExchangeOneImpl;
-import rabbitmq.producer.exchanges.ExchangeTwoImpl;
+import rabbitmq.producer.exchanges.RoutingKeyOneImpl;
+import rabbitmq.producer.exchanges.RoutingKeyThreeImpl;
+import rabbitmq.producer.exchanges.RoutingKeyTwoImpl;
 
 @SpringBootApplication
 public class ProducerApplication implements CommandLineRunner {
@@ -15,14 +16,18 @@ public class ProducerApplication implements CommandLineRunner {
     }
 
     @Autowired
-    private ExchangeOneImpl exchangeOne;
+    private RoutingKeyOneImpl routingKeyOne;
 
     @Autowired
-    private ExchangeTwoImpl exchangeTwo;
+    private RoutingKeyTwoImpl routingKeyTwo;
+
+    @Autowired
+    private RoutingKeyThreeImpl routingKeyThree;
 
     @Override
     public void run(String... args) throws Exception {
-        exchangeOne.send("test1");
-        exchangeTwo.send("test2");
+        routingKeyOne.send("routingKeyOne");
+        routingKeyTwo.send("routingKeyTwo");
+        routingKeyThree.send("routingKeyThree");
     }
 }
