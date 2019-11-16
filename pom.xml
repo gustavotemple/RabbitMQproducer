@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>rabbitmq</groupId>
-	<artifactId>producer</artifactId>
+	<artifactId>ProducerApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>producer</name>
+	<name>ProducerApp</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

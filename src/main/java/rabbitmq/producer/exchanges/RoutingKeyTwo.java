@@ -9,10 +9,10 @@ public abstract class RoutingKeyTwo {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @Value("${destinations.queues.q2.exchange}")
+    @Value("${destinations.queues.queue2.exchange}")
     private String exchange;
 
-    @Value("${destinations.queues.q2.routing-key}")
+    @Value("${destinations.queues.queue2.routing-key}")
     private String routingKey;
 
     public void send(String message) {
